@@ -123,7 +123,7 @@ local default_plugins = {
             require("core.utils").load_mappings "comment"
         end,
         config = function(_, opts)
-            require("comment").setup(opts)
+            require("Comment").setup(opts)
         end,
     },
 
@@ -158,6 +158,17 @@ local default_plugins = {
             telescope.setup(opts)
 
             -- load extensions
+        end,
+    },
+
+    {
+        "folke/which-key.nvim",
+        keys = { "<leader>", '"', "'", "`", "c", "v", "g" },
+        init = function ()
+            require("core.utils").load_mappings "whichkey"
+        end,
+        config = function (_, opts)
+            require("which-key").setup(opts)
         end,
     },
 }
